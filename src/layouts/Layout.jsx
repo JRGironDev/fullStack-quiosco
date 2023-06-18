@@ -1,3 +1,10 @@
-export default function layout() {
-  return <div>Layout</div>;
+import { Outlet } from "react-router-dom";
+
+export default function Layout() {
+  return (
+    <div>
+      Layout
+      <Outlet />
+    </div>
+  );
 }
