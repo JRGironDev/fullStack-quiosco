@@ -1,10 +1,14 @@
-import { context } from "react";
+import { createContext } from "react";
 
 const QuioscoContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 const QuioscoProvider = ({ children }) => {
+  const autenticado = true;
   return (
-    <QuioscoContext.provider value={{}}>{children}</QuioscoContext.provider>
+    <QuioscoContext.Provider value={{ autenticado }}>
+      {children}
+    </QuioscoContext.Provider>
   );
 };
 
