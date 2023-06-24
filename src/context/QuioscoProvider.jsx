@@ -6,8 +6,16 @@ const QuioscoContext = createContext();
 // eslint-disable-next-line react/prop-types
 const QuioscoProvider = ({ children }) => {
   const [categorias, setCategorias] = useState(categoriasDB);
+  const [categoriaActual, setCategoriaActual] = useState(categorias[0]);
+
+  const handleClickCategoria = () => {
+    console.log("click categoria");
+  };
+
   return (
-    <QuioscoContext.Provider value={{ categorias }}>
+    <QuioscoContext.Provider
+      value={{ categorias, categoriaActual, handleClickCategoria }}
+    >
       {children}
     </QuioscoContext.Provider>
   );
