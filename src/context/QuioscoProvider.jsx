@@ -1,12 +1,13 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
+import { categorias as categoriasDB } from "../data/categorias";
 
 const QuioscoContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 const QuioscoProvider = ({ children }) => {
-  const autenticado = true;
+  const [categorias, setCategorias] = useState(categoriasDB);
   return (
-    <QuioscoContext.Provider value={{ autenticado }}>
+    <QuioscoContext.Provider value={{ categorias }}>
       {children}
     </QuioscoContext.Provider>
   );
